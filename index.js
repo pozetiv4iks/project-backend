@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import reqRouter from './reqRouter.js';
 import userRouter from './userRouter.js';
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 const DB_URL = "mongodb+srv://admin:iHgUX21fY3JhAHUh@database.1t3oj.mongodb.net/?retryWrites=true&w=majority&appName=Database";
 
 const app = express();
