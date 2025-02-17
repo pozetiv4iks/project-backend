@@ -4,8 +4,8 @@ import reqRouter from './reqRouter.js';
 import userRouter from './userRouter.js';
 
 const PORT = process.env.PORT || 5000;
-const DB_URL = "mongodb+srv://admin:iHgUX21fY3JhAHUh@database.1t3oj.mongodb.net/?retryWrites=true&w=majority&appName=Database";
-
+const DB_URL = process.env.DB_URL;
+//process.env.DB_URL
 const app = express();
 
 
