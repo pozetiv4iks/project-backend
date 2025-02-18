@@ -1,11 +1,10 @@
 import User from './User.js';
-
+import userService from './userService.js';
 class UserController {
     async create(req,res){
-        try {const {name, lastName, email, password, number, gender, age, status} = req.body;
-        const post = await User.create({name, lastName, email, password, number, gender, age, status});
-        console.log(req.body);
-        res.json(post);
+        try {
+            const user = await userService.create(req.body);
+            res.json(user);
         } catch (e) {
             res.status(500).json(e)
         } 
