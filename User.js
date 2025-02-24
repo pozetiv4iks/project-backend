@@ -8,7 +8,7 @@ const User = new mongoose.Schema({
     number: {type: Number, required: true},
     gender: {type: String, required: true},
     age: {type: Number, required: true},
-    status: {type: String, required: true, default: 'user'},
+    status: {type: String, default: 'user'},
 })
 
 export default mongoose.model('User', User)

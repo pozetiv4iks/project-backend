@@ -12,11 +12,8 @@ class UserController {
 
     async getUserOfId(req,res){
         try{
-            const{id} = req.params;
-            if(!id){
-                res.status(400).json({message: 'id not founded'})
-            }
-            const user = await User.findById(id)
+            
+            const user = await userService.getUserOfId(id)
             return res.json(user)
         } catch (e) {
             res.status(500).json(e)

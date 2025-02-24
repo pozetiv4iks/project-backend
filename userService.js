@@ -1,24 +1,17 @@
-import User from "./User";
+import User from "./User.js";
 
 class userService {
     async create(user){
-            
             const createdUser = await User.create(user);
             return createdUser
-
         }
     
-    async getUserOfId(req,res){
-        try{
-            const{id} = req.params;
-            if(!id){
-                res.status(400).json({message: 'id not founded'})
-            }
-            const user = await User.findById(id)
-            return res.json(user)
-        } catch (e) {
-            res.status(500).json(e)
+    async getUserOfId(id){
+        if(!id) {
+            throw new Error('id notfound')
         }
+            const user = await User.findById(id)
+            return user
         }
     
         async updateUserOfId(req,res){
