@@ -5,6 +5,6 @@ const reqRouter = new Router();
 reqRouter.post('/create' , reqController.create);
 reqRouter.delete('/delete/:id', reqController.delete);
 reqRouter.put('/update/:id', reqController.update);
-reqRouter.get('/')
+reqRouter.get('/', reqController.get)
 
 export default reqRouter;

@@ -12,21 +12,20 @@ class UserController {
 
     async getUserOfId(req,res){
         try{
-            
-            const user = await userService.getUserOfId(id)
+            const user = await userService.getUserOfId(req.body._id)
             return res.json(user)
         } catch (e) {
             res.status(500).json(e)
         }
     }
 
-    async updateUserOfId(req,res){
+    async updateUserOfId(id){
         try{
             const user = req.params;
             if(!user._id){
                 res.status(400).json({message: 'not founded fot put'})
             }
-            const updateUser = await User.findByIdAndUpdate(user._id, user, {new: true});
+            const updateUser = await User.findByIdAndUpdate(id, user, {new: true});
             return res.json(updateUser);
 
         } catch(e){
