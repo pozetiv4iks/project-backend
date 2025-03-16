@@ -27,4 +27,8 @@ export default new class reqController {
     async delete(req, res) {
 
     }
+
+    async getByEmail(req, res) {
+        
+    }
 }

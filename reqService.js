@@ -18,4 +18,8 @@ export default new class reqService {
     async delete () {
         
     }
+
+    async getByEmail () {
+        
+    }
 }
